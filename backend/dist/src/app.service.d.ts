@@ -1,5 +1,5 @@
 import { Model } from 'mongoose';
-import { ScarapedData } from '../models/ScarapedData.schema';
+import { ScarapedData } from '../models/ScrapedData.schema';
 export declare class AppService {
     private readonly productModel;
     constructor(productModel: Model<ScarapedData>);

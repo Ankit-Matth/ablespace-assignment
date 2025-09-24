@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PlaywrightCrawler, Configuration } from 'crawlee';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { ScarapedData } from '../models/ScarapedData.schema';
+import { ScarapedData } from '../models/ScrapedData.schema';
 
 
 @Injectable()

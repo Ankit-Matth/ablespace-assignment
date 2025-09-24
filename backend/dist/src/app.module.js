@@ -11,7 +11,7 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const ScarapedData_schema_1 = require("../models/ScarapedData.schema");
+const ScrapedData_schema_1 = require("../models/ScrapedData.schema");
 const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
@@ -27,7 +27,7 @@ exports.AppModule = AppModule = __decorate([
                 }),
                 inject: [config_1.ConfigService],
             }),
-            mongoose_1.MongooseModule.forFeature([{ name: 'ScarapedData', schema: ScarapedData_schema_1.ScrapedDatachema }]),
+            mongoose_1.MongooseModule.forFeature([{ name: 'ScarapedData', schema: ScrapedData_schema_1.ScrapedDatachema }]),
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

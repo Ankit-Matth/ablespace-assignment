@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ScarapedData, ScrapedDatachema } from '../models/ScarapedData.schema';
+import { ScarapedData, ScrapedDatachema } from '../models/ScrapedData.schema';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
