@@ -8,9 +8,9 @@ Live link - https://ablespace-assignment-frontend.vercel.app/
 
 | Category      | Technology                                                                                             |
 | :------------ | :----------------------------------------------------------------------------------------------------- |
-| **Frontend**  | [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/) |
-| **Backend**   | [NestJS](https://nestjs.com/), [Playwright](https://playwright.dev/)                                     |
-| **Database**  | [MongoDB](https://www.mongodb.com/) (or other, depending on configuration)                               |
+| **Frontend**  | [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/) |
+| **Backend**   | [NestJS](https://nestjs.com/), [Playwright](https://playwright.dev/), [Crawler](http://crawlee.dev/js/docs/)                                     |
+| **Database**  | [MongoDB](https://www.mongodb.com/)                             |
 | **Styling**   | [Tailwind CSS](https://tailwindcss.com/)                                                               |
 
 ***
@@ -39,47 +39,45 @@ product-data-explorer/
 *   [npm](https://www.npmjs.com/)
 *   [Git](https://git-scm.com/)
 
-### Installation & Setup
+## Installation & Setup
 
-1.  **Clone the repository:**
+### 🔧 Backend Setup
 
-    ```bash
-    git clone https://github.com/Ankit-Matth/ablespace-assignment.git
-    cd ablespace-assignment
-    ```
+1. Clone the repository (if not already done):
+```bash
+git clone https://github.com/Ankit-Matth/ablespace-assignment.git
+cd ablespace-assignment
+```
 
-2.  **Setup the Backend:**
+2. Navigate to the backend folder & install dependencies:
+```bash
+cd backend
+npm install
+```
 
-    ```bash
-    cd backend
-    npm install
-    ```
+3. Start the backend server:
+```bash
+npm run start:dev
+```
 
-3.  **Setup the Frontend:**
+The backend will be running at:
+👉 http://localhost:5000
 
-    ```bash
-    cd ../frontend
-    npm install
-    ```
+### 🎨 Frontend Setup
 
-4.  **Start the Backend:**
+1. Navigate to the frontend folder & install dependencies:
+```bash
+cd frontend
+npm install
+```
 
-    ```bash
-    cd backend
-    npm run start:dev
-    ```
+2. Start the frontend server:
+```bash
+npm run dev
+```
 
-    The backend will be running on `http://localhost:5000`.
-
-5.  **Start the Frontend:**
-
-    ```bash
-    cd ../frontend
-    npm run dev
-    ```
-
-    The frontend will be running on `http://localhost:3000`.
-
+The frontend will be running at:
+👉 http://localhost:3000
 
 ## Note
 
