@@ -18,6 +18,11 @@ interface ProductDetails {
   recommendedProducts: Product[];
 }
 
+interface ProductDetailsApiResponse {
+  data: ProductDetails;
+  isFallback: boolean;
+}
+
 const formatSpecKey = (key: string): string => {
   return key
     .split('_')
@@ -44,11 +49,14 @@ const ProductDetailsPageContent = () => {
       setError(null); 
       try {
         const response = await fetch(`/api/get-product-details?sourceUrl=${encodeURIComponent(sourceUrl)}`);
-        const data = await response.json();
+        const result: ProductDetailsApiResponse = await response.json();
         if (!response.ok) {
-          throw new Error(data.error || 'Failed to fetch product details');
+          throw new Error(result.data.error || 'Failed to fetch product details');
         }
-        setProduct(data);
+        setProduct(result.data);
+        if (result.isFallback) {
+          alert("Fallback data is being displayed because scraping failed.");
+        }
       } catch (err: unknown) {
         if (err instanceof Error) {
             setError(err.message);

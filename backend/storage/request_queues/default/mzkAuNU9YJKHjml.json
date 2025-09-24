@@ -1,0 +1,9 @@
+{
+	"id": "mzkAuNU9YJKHjml",
+	"json": "{\"id\":\"mzkAuNU9YJKHjml\",\"url\":\"https://www.worldofbooks.com/search?q=gita\",\"loadedUrl\":\"https://www.worldofbooks.com/en-gb/search?q=gita\",\"uniqueKey\":\"https://www.worldofbooks.com/search?q=gita\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-09-24T13:47:20.512Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.worldofbooks.com/search?q=gita",
+	"url": "https://www.worldofbooks.com/search?q=gita"
+}

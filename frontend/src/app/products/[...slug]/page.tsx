@@ -4,6 +4,11 @@ import React, { useEffect, useState, Suspense } from "react";
 import { useParams } from "next/navigation";
 import ProductCard, { Product } from "@/components/ProductCard";
 
+interface ProductsApiResponse {
+  data: Product[];
+  isFallback: boolean;
+}
+
 const ProductsPageContent = () => {
   const params = useParams();
   const slugArray = params.slug as string[] | undefined; 
@@ -36,8 +41,11 @@ const ProductsPageContent = () => {
           throw new Error("Failed to fetch products");
         }
 
-        const data = await response.json();
-        setProducts(data);
+        const result: ProductsApiResponse = await response.json();
+        setProducts(result.data);
+        if (result.isFallback) {
+          alert("Fallback data is being displayed because scraping failed.");
+        }
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);

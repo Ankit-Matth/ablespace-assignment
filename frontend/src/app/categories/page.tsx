@@ -18,6 +18,11 @@ interface Category {
   subcategories: Subcategory[];
 }
 
+interface CategoriesApiResponse {
+  data: Category[];
+  isFallback: boolean;
+}
+
 export default function CategoriesPage() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
@@ -30,9 +35,12 @@ export default function CategoriesPage() {
         if (!response.ok) {
           throw new Error("Failed to fetch data from the server.");
         }
-        const data = await response.json();
-        console.log("Fetched categories:", data);
-        setCategories(data);
+        const result: CategoriesApiResponse = await response.json();
+        console.log("Fetched categories:", result.data);
+        setCategories(result.data);
+        if (result.isFallback) {
+          alert("Fallback data is being displayed because scraping failed.");
+        }
       } catch (err) {
         console.error("Error fetching categories:", err);
         setError("Could not load categories. Please try again later.");

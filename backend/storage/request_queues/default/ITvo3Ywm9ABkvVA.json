@@ -1,9 +1,0 @@
-{
-	"id": "ITvo3Ywm9ABkvVA",
-	"json": "{\"id\":\"ITvo3Ywm9ABkvVA\",\"url\":\"https://www.worldofbooks.com/collections/non-fiction-books\",\"loadedUrl\":\"https://www.worldofbooks.com/en-gb/collections/non-fiction-books\",\"uniqueKey\":\"https://www.worldofbooks.com/collections/non-fiction-books\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-09-24T12:01:12.532Z\"}",
-	"method": "GET",
-	"orderNo": null,
-	"retryCount": 0,
-	"uniqueKey": "https://www.worldofbooks.com/collections/non-fiction-books",
-	"url": "https://www.worldofbooks.com/collections/non-fiction-books"
-}

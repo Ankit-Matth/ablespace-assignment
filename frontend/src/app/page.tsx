@@ -22,6 +22,11 @@ interface NavigationData {
   categories: Category[];
 }
 
+interface ApiResponse {
+  data: NavigationData[];
+  isFallback: boolean;
+}
+
 export default function Home() {
   const [navigationHeadings, setNavigationHeadings] = useState<NavigationData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -32,8 +37,11 @@ export default function Home() {
       try {
         const response = await fetch("/api/navigation");
         if (!response.ok) throw new Error("Network error");
-        const data: NavigationData[] = await response.json();
-        setNavigationHeadings(data);
+        const result: ApiResponse = await response.json();
+        setNavigationHeadings(result.data);
+        if (result.isFallback) {
+          alert("Fallback data is being displayed because scraping failed.");
+        }
       } catch (error) {
         console.error("Failed to fetch navigation data:", error);
       } finally {

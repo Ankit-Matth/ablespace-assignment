@@ -4,6 +4,11 @@ import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductCard, { Product } from "@/components/ProductCard";
 
+interface SearchApiResponse {
+  data: Product[];
+  isFallback: boolean;
+}
+
 const SearchPageContent = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get("query") || "";
@@ -29,8 +34,11 @@ const SearchPageContent = () => {
           throw new Error("Failed to fetch search results");
         }
 
-        const data = await response.json();
-        setProducts(data);
+        const result: SearchApiResponse = await response.json();
+        setProducts(result.data);
+        if (result.isFallback) {
+          alert("Fallback data is being displayed because scraping failed.");
+        }
       } catch (err: unknown) {
         if (err instanceof Error) {
             setError(err.message);
