@@ -2,6 +2,8 @@
 
 This is a full-stack application that allows users to explore products from [World of Books](https://www.worldofbooks.com/) through a clean and modern interface. The application scrapes data on-demand, providing users with live information from the website.
 
+Live link - https://ablespace-assignment-frontend.vercel.app/
+
 ## Tech Stack
 
 | Category      | Technology                                                                                             |
@@ -42,8 +44,8 @@ product-data-explorer/
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/YourUsername/product-data-explorer.git
-    cd product-data-explorer
+    git clone https://github.com/Ankit-Matth/ablespace-assignment.git
+    cd ablespace-assignment
     ```
 
 2.  **Setup the Backend:**
@@ -60,9 +62,7 @@ product-data-explorer/
     npm install
     ```
 
-### Running the Application
-
-1.  **Start the Backend:**
+4.  **Start the Backend:**
 
     ```bash
     cd backend
@@ -71,7 +71,7 @@ product-data-explorer/
 
     The backend will be running on `http://localhost:5000`.
 
-2.  **Start the Frontend:**
+5.  **Start the Frontend:**
 
     ```bash
     cd ../frontend
