@@ -49,8 +49,10 @@ const ProductDetailsPageContent = () => {
           throw new Error(data.error || 'Failed to fetch product details');
         }
         setProduct(data);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+            setError(err.message);
+        }
       } finally {
         setIsLoading(false);
       }

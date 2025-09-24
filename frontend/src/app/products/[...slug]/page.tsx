@@ -38,8 +38,10 @@ const ProductsPageContent = () => {
 
         const data = await response.json();
         setProducts(data);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message);
+        }
         console.error(err);
       } finally {
         setIsLoading(false);
@@ -50,7 +52,7 @@ const ProductsPageContent = () => {
   }, [categorySlug]);
 
   if (isLoading) {
-    return <div className="text-center p-10">Loading products for "{categorySlug}"...</div>;
+    return <div className="text-center p-10">Loading products for &quot;{categorySlug}&quot;...</div>;
   }
 
   if (error) {

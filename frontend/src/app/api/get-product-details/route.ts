@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
     
     try {
       new URL(sourceUrl);
-    } catch (_) {
+    } catch {
       return NextResponse.json(
         { error: "The provided 'sourceUrl' is not a valid URL." },
         { status: 400 }

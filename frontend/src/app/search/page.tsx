@@ -31,8 +31,10 @@ const SearchPageContent = () => {
 
         const data = await response.json();
         setProducts(data);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+            setError(err.message);
+        }
         console.error(err);
       } finally {
         setIsLoading(false);
@@ -43,7 +45,7 @@ const SearchPageContent = () => {
   }, [query]);
 
   if (isLoading) {
-    return <div className="text-center p-10">Searching for "{query}"...</div>;
+    return <div className="text-center p-10">Searching for &quot;{query}&quot;...</div>;
   }
 
   if (error) {
@@ -53,7 +55,7 @@ const SearchPageContent = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">
-        {query ? `Search Results for: "${query}"` : "Please enter a search query"}
+        {query ? `Search Results for: &quot;${query}&quot;` : "Please enter a search query"}
       </h1>
 
       {products.length > 0 ? (
@@ -64,7 +66,7 @@ const SearchPageContent = () => {
         </div>
       ) : (
         <div className="text-center p-10 bg-gray-50 rounded-lg">
-          <p>No results found for "{query}".</p>
+          <p>No results found for &quot;{query}&quot;.</p>
         </div>
       )}
     </div>

@@ -16,9 +16,9 @@ export async function GET(req: NextRequest) {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error(error);
-    return new NextResponse(JSON.stringify({ error: error.message }), {
+    return new NextResponse(JSON.stringify({ error: error instanceof Error ? error.message : 'An unknown error occurred' }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     });
