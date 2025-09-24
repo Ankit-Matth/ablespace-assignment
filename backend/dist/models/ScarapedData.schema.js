@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScarapedDataSchema = void 0;
+exports.ScrapedDatachema = void 0;
 const mongoose = require("mongoose");
-exports.ScarapedDataSchema = new mongoose.Schema({
+exports.ScrapedDatachema = new mongoose.Schema({
     query: String,
     data: mongoose.Schema.Types.Mixed,
     source: String,

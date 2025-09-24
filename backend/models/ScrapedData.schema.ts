@@ -1,7 +1,7 @@
 
 import * as mongoose from 'mongoose';
 
-export const ScarapedDataSchema = new mongoose.Schema({
+export const ScrapedDatachema = new mongoose.Schema({
   query: String,
   data: mongoose.Schema.Types.Mixed,
   source: String,

@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose';
-export declare const ScarapedDataSchema: mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
+export declare const ScrapedDatachema: mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
     timestamp: NativeDate;
     query?: string;
     data?: any;

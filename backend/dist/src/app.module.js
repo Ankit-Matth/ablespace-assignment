@@ -27,7 +27,7 @@ exports.AppModule = AppModule = __decorate([
                 }),
                 inject: [config_1.ConfigService],
             }),
-            mongoose_1.MongooseModule.forFeature([{ name: 'ScarapedData', schema: ScarapedData_schema_1.ScarapedDataSchema }]),
+            mongoose_1.MongooseModule.forFeature([{ name: 'ScarapedData', schema: ScarapedData_schema_1.ScrapedDatachema }]),
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

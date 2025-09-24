@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ScarapedData, ScarapedDataSchema } from '../models/ScarapedData.schema';
+import { ScarapedData, ScrapedDatachema } from '../models/ScarapedData.schema';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
@@ -16,7 +16,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       }),
       inject: [ConfigService],
     }),
-    MongooseModule.forFeature([{ name: 'ScarapedData', schema: ScarapedDataSchema }]),
+    MongooseModule.forFeature([{ name: 'ScarapedData', schema: ScrapedDatachema }]),
   ],
   controllers: [AppController],
   providers: [AppService],
