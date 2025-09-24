@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 const fallbackData = [
   {
@@ -669,6 +669,7 @@ export async function GET() {
     const navigationData = res.data;
     return NextResponse.json({ data: navigationData, isFallback: false });
   } catch (error) {
+    console.error("API route error:", error);
     return NextResponse.json({ data: fallbackData, isFallback: true });
   }
 }

@@ -49,9 +49,10 @@ const ProductDetailsPageContent = () => {
       setError(null); 
       try {
         const response = await fetch(`/api/get-product-details?sourceUrl=${encodeURIComponent(sourceUrl)}`);
-        const result: ProductDetailsApiResponse = await response.json();
+        const result = await response.json();
         if (!response.ok) {
-          throw new Error(result.data.error || 'Failed to fetch product details');
+          const errorResult = result as { error?: string };
+          throw new Error(errorResult.error || 'Failed to fetch product details');
         }
         setProduct(result.data);
         if (result.isFallback) {
